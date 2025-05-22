@@ -1,0 +1,5 @@
+data/*
+weights/*
+!weights/yolo11m-seg.pt
+!weights/yolo11m.pt
+scripts/runs/*
