@@ -1,0 +1,15 @@
+<launch>
+  <arg name="input_topic" default="/usb_cam/image_raw"/>
+  <arg name="class_topic" default="/yolo/segmentation/classes"/>
+  <arg name="output_topic" default="/yolo/segmentation/image"/>
+  <arg name="queue" default="1"/>
+  <arg name="model" default="yolo11m-seg.pt"/>
+
+  <node name="yolo_segmentation" pkg="yolo_ros" type="yolo_segmentation_2d.py" output="screen">
+    <param name="input_topic" value="$(arg input_topic)"/>
+    <param name="class_topic" value="$(arg class_topic)"/>
+    <param name="output_topic" value="$(arg output_topic)"/>
+    <param name="queue" value="$(arg queue)"/>
+    <param name="model" value="$(arg model)"/>
+  </node>
+</launch>

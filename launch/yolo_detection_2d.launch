@@ -1,0 +1,15 @@
+<launch>
+  <arg name="input_topic" default="/usb_cam/image_raw"/>
+  <arg name="class_topic" default="/yolo/detection/classes"/>
+  <arg name="output_topic" default="/yolo/detection/image"/>
+  <arg name="queue" default="1"/>
+  <arg name="model" default="yolo11m.pt"/>
+
+  <node name="yolo_detection" pkg="yolo_ros" type="yolo_detection_2d.py" output="screen">
+    <param name="input_topic" value="$(arg input_topic)"/>
+    <param name="class_topic" value="$(arg class_topic)"/>
+    <param name="output_topic" value="$(arg output_topic)"/>
+    <param name="queue" value="$(arg queue)"/>
+    <param name="model" value="$(arg model)"/>
+  </node>
+</launch>
