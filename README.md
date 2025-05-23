@@ -59,3 +59,18 @@ If you want to use pre-trained models, you can search avilable models online fro
 - [YOLO-World](https://docs.ultralytics.com/models/yolo-world/)
 
 ## Train your own dataset and use the weight
+```
+.
+├── data
+│   └── YOLODataset
+```
+Put your dataset under YOLODataset. your dataset should include dataset.yaml, images(directory), labels(directory).
+```
+Please run
+```bash
+source <your ros workspace>/devel/share/yolo_ros/venv/bin/activate
+roscd yolo_ros
+cd scripts
+python train.py
+```
+For more detail, please read source code of `train.py`
