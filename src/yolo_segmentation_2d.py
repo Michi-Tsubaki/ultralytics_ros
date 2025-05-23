@@ -19,7 +19,7 @@ classes_pub = rospy.Publisher(class_topic, String, queue_size=1)
 seg_image_pub = rospy.Publisher(output_topic, Image, queue_size=1)
 
 rospack = rospkg.RosPack()
-package_path = rospack.get_path('ultralytics_ros')
+package_path = rospack.get_path('yolo_ros')
 segmentation_model = YOLO(package_path+"/weights/yolo11m-seg.pt")
 
 def callback(data):

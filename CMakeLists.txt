@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(ultralytics_ros)
+project(yolo_ros)
 
 find_package(catkin REQUIRED COMPONENTS
   catkin_virtualenv

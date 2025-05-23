@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ultralytics_ros</name>
+  <name>yolo_ros</name>
   <version>0.0.0</version>
   <description>The yolo_detection_node package</description>
 
