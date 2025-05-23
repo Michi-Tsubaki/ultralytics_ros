@@ -6,6 +6,8 @@ from sensor_msgs.msg import Image
 from std_msgs.msg import String
 from ultralytics import YOLO
 
+import rospkg
+
 rospy.init_node("yolo_detection_2d")
 time.sleep(1)
 
@@ -16,7 +18,9 @@ output_topic = rospy.get_param('~output_topic', '/yolo/detection/image')
 classes_pub = rospy.Publisher(class_topic, String, queue_size=1)
 det_image_pub = rospy.Publisher(output_topic, Image, queue_size=1)
 
-detection_model = YOLO("../weights/yolo11m.pt")
+rospack = rospkg.RosPack()
+package_path = rospack.get_path('ultralytics_ros')
+detection_model = YOLO(package_path+"/weights/yolo11m.pt")
 
 def callback(data):
     array = ros_numpy.numpify(data)
